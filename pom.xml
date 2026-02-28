@@ -7,11 +7,50 @@
   <groupId>com.xzyllx</groupId>
   <artifactId>xzyllx-travel</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>travel-common</module>
+    <module>travel-modules</module>
+    <module>travel-modules/travel-user</module>
+    <module>travel-modules/travel-order</module>
+    <module>travel-modules/travel-pay</module>
+    <module>travel-modules/travel-car</module>
+    <module>travel-modules/travel-hotel</module>
+    <module>travel-modules/travel-oxygen</module>
+    <module>travel-admin</module>
+    <module>travel-app</module>
+  </modules>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.boot.version>2.7.8</spring.boot.version>
+    <lombok.version>2.7.8</lombok.version>
+    <mybatisplus.version>3.5.2</mybatisplus.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatisplus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
 </project>
